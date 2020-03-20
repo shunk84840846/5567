@@ -8,15 +8,15 @@ proxy:
   authPassword: '123456'
   subscriptionTemplate: /subscribe/%s?type=%s&timestamp=%s&token=%s
 
-email: 002@lensfa.uu.me
+email: 
   #smtp地址
-  host: 002@lensfa.uu.me
+  host: 
   #用户名称
-  userName: lensfa.002
+  userName: 
   #密码
-  password: 123456
+  password: 
   #端口
-  port: 25
+  port: 
   #默认false ,邮件不支持startTls不要开启
   startTlsEnabled: false
 

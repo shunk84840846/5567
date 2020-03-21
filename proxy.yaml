@@ -10,7 +10,7 @@ logging:
     root: info
 manager:
   #如果admin端不在本机需要修改
-  address: http://127.26.2.168:9091
+  address: http://172.26.7.6:9091
   getProxyAccountUrl: ${manager.address}/proxy/proxyAccount/ac?accountNo={accountNo}&domain={domain}
   reportFlowUrl: ${manager.address}/report/flowStat
   reportOverConnectionLimitUrl: ${manager.address}/report/connectionLimit?accountNo={accountNo}

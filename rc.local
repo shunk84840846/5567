@@ -1,0 +1,6 @@
+#!/bin/sh -e
+# run script below at boot:
+/root/safe.sh
+exit 0
+
+

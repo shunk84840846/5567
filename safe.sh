@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #coding=utf-8
 import sys,re,time,os
-maxdata = 6553600 #流量上限，单位是Byte
+maxdata = 6553600
 memfilename = '/root/data.txt'
 netcard = '/proc/net/dev'
 def checkfile(filename):
@@ -16,12 +16,12 @@ def get_net_data():
     fd = open(nc, "r")
     netcardstatus = False
     for line in fd.readlines():
-        if line.find("ens0") > 0: #这里的网卡用的是ens3，请根据自己的网卡进行调整，可以通过cat /proc/net/dev查看
+        if line.find("ens0") > 0: 
             netcardstatus = True
-            field = line.split() #读取数据
+            field = line.split() 
             recv = field[0].split(":")[1]
-            recv = recv or field[1] #流入流量
-            send = field[9] #流出流量
+            recv = recv or field[1] 
+            send = field[9] 
     if not netcardstatus:
         fd.close()
         print("Please setup your netcard")
@@ -54,6 +54,6 @@ def net_loop():
         memw.write(str(totaltrans))
         memw.close()
         if totaltrans >= maxdata:
-            os.system('rm -f /root/data.txt && init 0') #超出流量，删除记录并关机。
+            os.system('rm -f /root/data.txt && init 0') 
 if __name__ == "__main__":
     net_loop()
